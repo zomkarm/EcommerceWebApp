@@ -18,6 +18,14 @@
                       <li><a href="testimonial.html">Testimonial</a></li>
                    </ul>
                 </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Categories <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     @foreach($categories as $category)
+                        <li><img width="30" height="30" src="{{ url($category->category_img) }}" /><a href="about.html">{{ $category->category_name }}</a></li>
+                     @endforeach
+                  </ul>
+               </li>
                 <li class="nav-item">
                    <a class="nav-link" href="product.html">Products</a>
                 </li>

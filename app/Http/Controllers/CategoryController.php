@@ -19,7 +19,7 @@ class CategoryController extends Controller
         $data = [
             'pagename'=>'admin.category'
         ];
-        $data['categories'] = Category::all();
+        $data['categories'] = Category::simplePaginate(10);
         return view('admin.index',$data);
     }
 

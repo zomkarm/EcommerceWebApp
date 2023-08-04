@@ -37,13 +37,15 @@
                       </td>
                     </tr>  
                   @endforeach
-                    
                 </tbody>
               </table>
+            </div>
+            <br>
+            <div style="color:black;">
+              {{ $categories->links() }}
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>

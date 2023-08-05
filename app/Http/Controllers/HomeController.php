@@ -10,7 +10,12 @@ class HomeController extends Controller
 {
     public function index(){
         $data['categories'] = Category::all();
-        return view('home.userpage',$data);
+        return view('home.index',$data);
+    }
+
+    public function get_home_data($view_data){
+        $view_data['categories'] = Category::all();
+        return $view_data;
     }
 
     public function redirect(){
@@ -27,5 +32,29 @@ class HomeController extends Controller
             ];
         }
         return view($view,$data);
+    }
+
+    public function blogs(){
+        $data = [
+            'pagename'=>'home.blogs'
+        ];
+        $data = $this->get_home_data($data);
+        return view('home.index',$data);
+    }
+
+    public function contact(){
+        $data = [
+            'pagename'=>'home.contact'
+        ];
+        $data = $this->get_home_data($data);
+        return view('home.index',$data);
+    }
+
+    public function products(){
+        $data = [
+            'pagename'=>'home.products'
+        ];
+        $data = $this->get_home_data($data);
+        return view('home.index',$data);
     }
 }

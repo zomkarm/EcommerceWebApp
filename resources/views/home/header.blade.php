@@ -9,14 +9,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
              <ul class="navbar-nav">
                 <li class="nav-item active">
-                   <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-               <li class="nav-item dropdown">
-                   <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
-                   <ul class="dropdown-menu">
-                      <li><a href="about.html">About</a></li>
-                      <li><a href="testimonial.html">Testimonial</a></li>
-                   </ul>
+                   <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Categories <span class="caret"></span></a>
@@ -27,13 +20,13 @@
                   </ul>
                </li>
                 <li class="nav-item">
-                   <a class="nav-link" href="product.html">Products</a>
+                   <a class="nav-link" href="{{ url('/products') }}">Products</a>
                 </li>
                 <li class="nav-item">
-                   <a class="nav-link" href="blog_list.html">Blog</a>
+                   <a class="nav-link" href="{{ url('/blogs') }}">Blog</a>
                 </li>
                 <li class="nav-item">
-                   <a class="nav-link" href="contact.html">Contact</a>
+                   <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
                 </li>
                 @if (Route::has('login'))
                         @auth
@@ -46,11 +39,6 @@
                             @endif
                         @endauth
                 @endif
-                <form class="form-inline">
-                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                   <i class="fa fa-search" aria-hidden="true"></i>
-                   </button>
-                </form>
              </ul>
           </div>
        </nav>

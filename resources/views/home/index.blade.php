@@ -25,15 +25,10 @@
       <div class="hero_area">
         @include('home.header');
         @include('home.slider');
+      
       </div>
-      @include('home.why');
-      @include('home.new_arrival');
-      
-      @include('home.product');
-      
-      @include('home.subscribe');
-      
-      @include('home.client');
+         
+      @include($pagename)
 
       @include('home.footer');
 

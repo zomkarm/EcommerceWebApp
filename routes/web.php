@@ -18,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class,'index']);
 
+Route::get('/contact',[HomeController::class,'contact']);
+
+Route::get('/blogs',[HomeController::class,'blogs']);
+
+Route::get('/products',[HomeController::class,'products']);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -28,6 +34,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
+//Admin Routes
 Route::get('/redirect',[HomeController::class,'redirect']);
 
 Route::get('/view_category',[CategoryController::class,'view_category']);

@@ -90,6 +90,22 @@
         </a>
       </li>
       <li class="nav-item menu-items">
+        <a class="nav-link" href="{{ url('products') }}">
+          <span class="menu-icon">
+            <i class="mdi mdi-playlist-play"></i>
+          </span>
+          <span class="menu-title">Products</span>
+        </a>
+      </li>
+      <li class="nav-item menu-items">
+        <a class="nav-link" href="{{ url('orders') }}">
+          <span class="menu-icon">
+            <i class="mdi mdi-playlist-play"></i>
+          </span>
+          <span class="menu-title">Orders</span>
+        </a>
+      </li>
+      <li class="nav-item menu-items">
         <a class="nav-link" href="pages/tables/basic-table.html">
           <span class="menu-icon">
             <i class="mdi mdi-table-large"></i>

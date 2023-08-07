@@ -36,14 +36,14 @@
                     <label for="category_img">Category Status</label><br>
                     <input type="radio" class="form-radio" name="status" value="1" {{ $category->status == 1 ? 'checked' : '' }}/>Active
                     <input type="radio" class="form-radio" name="status" value="0" {{ $category->status == 0 ? 'checked' : '' }}/>Inactive
-                    @error('category_img')
+                    @error('status')
                         <div class="alert alert-danger">
                             {{ $message }}
                         </div>
                     @enderror
                 </div>
                 <button type="submit" class="btn btn-primary me-2">Add</button>
-                <button class="btn btn-dark">Cancel</button>
+                <a class="btn btn-dark" href="{{ url('view_category') }}">Cancel</a>
               </form>
             </div>
           </div>

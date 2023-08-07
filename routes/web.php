@@ -3,6 +3,10 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
+use App\Http\Middleware\Authenticate;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,17 +38,38 @@ Route::middleware([
     })->name('dashboard');
 });
 
-//Admin Routes
 Route::get('/redirect',[HomeController::class,'redirect']);
 
-Route::get('/view_category',[CategoryController::class,'view_category']);
+Route::middleware('auth')->group(function(){
+    
+    //Category URL Endpoints
+    Route::get('/view_category',[CategoryController::class,'view_category']);
 
-Route::get('/category/add_category',[CategoryController::class,'add_category']);
+    Route::get('/category/add_category',[CategoryController::class,'add_category']);
 
-Route::post('/category/store',[CategoryController::class,'store']);
+    Route::post('/category/store',[CategoryController::class,'store']);
 
-Route::get('/category/edit_category/{id}',[CategoryController::class,'edit_category']);
+    Route::get('/category/edit_category/{id}',[CategoryController::class,'edit_category']);
 
-Route::put('/category/update/{id}',[CategoryController::class,'update']);
+    Route::put('/category/update/{id}',[CategoryController::class,'update']);
 
-Route::get('/category/delete/{id}',[CategoryController::class,'delete']);
+    Route::get('/category/delete/{id}',[CategoryController::class,'delete']);
+
+    //Product URL Endpoints
+    Route::get('/products',[ProductController::class,'index']);
+
+    Route::get('/product',[ProductController::class,'add_product']);
+
+    Route::post('/products',[ProductController::class,'store']);
+
+    Route::get('/products/edit_product/{id}',[ProductController::class,'edit_product']);
+
+    Route::put('/products/{id}',[ProductController::class,'update']);
+
+    Route::get('/products/delete/{id}',[ProductController::class,'delete']);
+
+    //Orders URL Endpoints
+    Route::get('/orders',[OrderController::class,'index']);
+
+});
+

@@ -62,7 +62,7 @@ class CategoryController extends Controller
             $request->category_img->move(public_path('uploads/categories'), $fileName);
             //code for remove old file
             if($category->category_img != ''  && $category->category_img != null){
-                $file_old = public_path().$category->category_img;
+                $file_old = public_path()."/".$category->category_img;
                 unlink($file_old);
             }
 

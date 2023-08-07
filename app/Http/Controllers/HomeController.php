@@ -3,18 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
     public function index(){
-        $data['categories'] = Category::all();
+        $data = [
+            'pagename'=>'home.homepage'
+        ];
+        $data = $this->get_home_data($data);
         return view('home.index',$data);
     }
 
     public function get_home_data($view_data){
         $view_data['categories'] = Category::all();
+        $view_data['products'] = Product::all();
         return $view_data;
     }
 

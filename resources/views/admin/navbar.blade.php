@@ -184,12 +184,12 @@
                 </div>
               </div>
               <div class="preview-item-content">
-                  <div class="preview-subject mb-1">
-                      <form method="POST" action="{{ route('logout') }}" x-data>
-                          @csrf
-                      <button type="submit" >{{ __('Log Out') }}</button>
-                      </form>
-                  </div>
+                <div class="preview-subject mb-1">
+                    <form method="POST" action="{{ route('logout') }}" x-data>
+                        @csrf
+                    <button style="all:unset;" type="submit" >{{ __('Log Out') }}</button>
+                    </form>
+                </div>
               </div>
             </a>
             <div class="dropdown-divider"></div>
